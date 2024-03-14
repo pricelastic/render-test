@@ -4,9 +4,9 @@ const fastify = Fastify({
   logger: true
 });
 
-fastify.get('/', function (request, reply) {
+fastify.all('*', function (request, reply) {
   fastify.log.info(Object.assign({}, process.env));
-  reply.send(Object.assign({}, process.env));
+  reply.send({ envs: process.env });
 });
 
 fastify.listen({ port: process.env.PORT }, function (err, address) {
