@@ -5,7 +5,7 @@ const fastify = Fastify({
 });
 
 fastify.get('/', function (request, reply) {
-  reply.send(process.env);
+  reply.json(process.env);
 });
 
 fastify.listen({ port: process.env.PORT }, function (err, address) {
