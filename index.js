@@ -5,13 +5,13 @@ const fastify = Fastify({
 });
 
 fastify.all('*', function (request, reply) {
-  fastify.log.info(Object.assign({}, process.env));
+  console.log(Object.assign({}, process.env));
   reply.send({ envs: process.env });
 });
 
 fastify.listen({ port: process.env.PORT }, function (err, address) {
   if (err) {
-    fastify.log.error(err)
+    console.error(err)
     process.exit(1)
   }
   fastify.log.info(`Server is now listening on ${address}`);
