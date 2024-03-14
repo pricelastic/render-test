@@ -6,8 +6,8 @@ const fastify = Fastify({
 
 fastify.all('*', async function (request, reply) {
   console.log(Object.assign({}, process.env));
-  // reply.send({ envs: process.env });
-  return reply.send({ hello: 'world' })
+  // return reply.send({ hello: 'world' })
+  return reply.send({ envs: process.env });
 });
 
 fastify.listen({ host: '0.0.0.0', port: process.env.PORT }, function (err, address) {
