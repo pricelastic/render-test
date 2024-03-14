@@ -1,0 +1,14 @@
+{
+  "name": "render-test",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "index app.js"
+  },
+  "dependencies": {
+    "fastify": "^4.26.2"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
