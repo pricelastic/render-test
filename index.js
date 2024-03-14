@@ -4,10 +4,10 @@ const fastify = Fastify({
   logger: true
 });
 
-fastify.all('*', function (request, reply) {
+fastify.all('*', async function (request, reply) {
   console.log(Object.assign({}, process.env));
   // reply.send({ envs: process.env });
-  reply.send({ hello: 'world' })
+  return reply.send({ hello: 'world' })
 });
 
 fastify.listen({ host: '0.0.0.0', port: process.env.PORT }, function (err, address) {
