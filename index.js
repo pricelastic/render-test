@@ -9,7 +9,7 @@ fastify.all('*', function (request, reply) {
   reply.send({ envs: process.env });
 });
 
-fastify.listen({ port: process.env.PORT }, function (err, address) {
+fastify.listen({ host: '0.0.0.0', port: process.env.PORT }, function (err, address) {
   if (err) {
     console.error(err)
     process.exit(1)
