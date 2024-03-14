@@ -3,6 +3,6 @@ services:
     name: render-test
     runtime: node
     plan: free
-    autoDeploy: false
+    autoDeploy: true
     buildCommand: pnpm install
     startCommand: node index.js
